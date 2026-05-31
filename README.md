@@ -14,6 +14,8 @@ Requires: `uv` (install with `pip install uv`) — the script handles missing pr
 
 ## Install in Agents
 
+The `SKILL.md` file is the standard skill manifest. Copy it along with the script:
+
 ### Opencode
 
 ```bash
@@ -27,17 +29,20 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 
 ### Claude CLI
 
-Add to your project's `claude.json` or global config:
+Add to your `claude.json`:
 
 ```json
 {
   "customCommands": {
-    "oblique": "./scripts/oblique.sh"
+    "oblique": {
+      "description": "Get a creative prompt when stuck",
+      "command": "./scripts/oblique.sh"
+    }
   }
 }
 ```
 
-Or run directly: `./scripts/oblique.sh`
+Or reference SKILL.md in your project.
 
 ---
 
@@ -50,13 +55,31 @@ Add to your project's AGENTS.md:
 - oblique: ./scripts/oblique.sh
 ```
 
-Or run directly: `./scripts/oblique.sh`
+Or add SKILL.md to your codebase and reference it.
 
 ---
 
 ### Google Gemini
 
-Use the script directly in your prompts, or via the Gemini API as a custom tool.
+Use the script directly in prompts, or convert SKILL.md to a custom tool definition for the Gemini API.
+
+---
+
+## Format: SKILL.md
+
+SKILL.md is a simple markdown-based skill manifest:
+
+```yaml
+---
+name: oblique-strategies
+description: Use when the user is stuck, looping, or needs a creative intervention.
+---
+
+# Instructions
+Run ./oblique.sh and present the result.
+```
+
+This format can be adapted for other agents that support custom skill definitions.
 
 ---
 
