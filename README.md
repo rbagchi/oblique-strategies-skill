@@ -14,7 +14,7 @@ Requires: `uv` (install with `pip install uv`) — the script handles missing pr
 
 ## Install in Agents
 
-The `SKILL.md` file is the standard skill manifest. Copy it along with the script:
+This skill uses the **SKILL.md** format from the open [Agent Skills](https://agentskills.io) standard, supported by Claude, Codex, Opencode, and more.
 
 ### Opencode
 
@@ -29,45 +29,42 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 
 ### Claude CLI
 
-Add to your `claude.json`:
-
-```json
-{
-  "customCommands": {
-    "oblique": {
-      "description": "Get a creative prompt when stuck",
-      "command": "./scripts/oblique.sh"
-    }
-  }
-}
+```bash
+mkdir -p ~/.claude/skills/oblique-strategies
+cp SKILL.md scripts/oblique.sh ~/.claude/skills/oblique-strategies/
 ```
 
-Or reference SKILL.md in your project.
+Trigger: `/oblique` or say "I'm stuck" — Claude will auto-invoke based on description.
 
 ---
 
 ### OpenAI Codex
 
-Add to your project's AGENTS.md:
-
-```markdown
-# Custom Skills
-- oblique: ./scripts/oblique.sh
+```bash
+mkdir -p ~/.agents/skills/oblique-strategies
+cp SKILL.md scripts/oblique.sh ~/.agents/skills/oblique-strategies/
 ```
 
-Or add SKILL.md to your codebase and reference it.
+Or in your project:
+
+```bash
+mkdir -p .agents/skills/oblique-strategies
+cp SKILL.md scripts/oblique.sh .agents/skills/oblique-strategies/
+```
+
+Trigger: `$oblique` or "I'm stuck"
 
 ---
 
-### Google Gemini
+### Google Gemini (CLI)
 
-Use the script directly in prompts, or convert SKILL.md to a custom tool definition for the Gemini API.
+Add SKILL.md to your project or reference the script directly in prompts.
 
 ---
 
-## Format: SKILL.md
+## SKILL.md Format
 
-SKILL.md is a simple markdown-based skill manifest:
+The skill manifest follows the [Agent Skills](https://agentskills.io) standard:
 
 ```yaml
 ---
@@ -76,10 +73,9 @@ description: Use when the user is stuck, looping, or needs a creative interventi
 ---
 
 # Instructions
+
 Run ./oblique.sh and present the result.
 ```
-
-This format can be adapted for other agents that support custom skill definitions.
 
 ---
 
