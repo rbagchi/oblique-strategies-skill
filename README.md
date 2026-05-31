@@ -1,43 +1,68 @@
-# 🎴 Oblique Strategies
+# Oblique Strategies
 
-> *"The value of the cards was that they were like a compass... they told you where you were, but they didn't tell you how to get to where you wanted to go."* — Brian Eno
+Random creative prompts from Brian Eno & Peter Schmidt's Oblique Strategies decks.
 
-This is an [agent-skill](https://github.com/topics/agent-skills) designed to introduce **controlled chaos** into the logical flow of AI agents. It is not a tool; it is a creative intervention.
+## Quick Start
 
-Derived from the legendary deck by Brian Eno and Peter Schmidt, this skill allows agents to break out of algorithmic loops through lateral thinking and artistic "dilemmas."
+```bash
+./scripts/oblique.sh
+```
 
-## 🎲 The Game
-
-This skill is designed to be a "Creative Provocateur." When you are stuck, or when your agent feels too predictable, call upon the deck. The agent will not just give you a quote; it will interpret a challenge to its own architecture.
-
-### Installation (The Portal)
-
-To invite this presence into your Gemini CLI or Claude Code environment:
-
-1. **Prepare the Space**:
-   ```bash
-   mkdir -p ~/.gemini/skills/oblique-strategies
-   ```
-2. **Transfer the Cards**:
-   ```bash
-   cp SKILL.md scripts/oblique.sh ~/.gemini/skills/oblique-strategies/
-   chmod +x ~/.gemini/skills/oblique-strategies/oblique.sh
-   ```
-
-## ⚡ How to Play
-
-Invite the agent to think laterally. 
-
-- *"I'm stuck in a loop."*
-- *"Give me an oblique strategy."*
-- *"We need a perspective shift."*
-
-The agent will then invoke the deck and attempt to reconcile its current "logical" task with a "dilemma" that may contradict its core mandates.
-
-## 🛠 Prerequisites
-
-- **[uv](https://github.com/astral-sh/uv)**: To manifest the dependencies with zero friction.
-- **Willingness to be wrong**: This skill may suggest you delete your best code.
+Requires: `uv` (install with `pip install uv`) — the script handles missing prereqs gracefully.
 
 ---
-*Inspired by the original 1975 deck. Powered by the `oblique` Python package.*
+
+## Install in Agents
+
+### Opencode
+
+```bash
+mkdir -p ~/.config/opencode/skills/oblique-strategies
+cp SKILL.md scripts/oblique.sh ~/.config/opencode/skills/oblique-strategies/
+```
+
+Trigger: `/oblique`, "I'm stuck", "need a creative idea"
+
+---
+
+### Claude CLI
+
+Add to your project's `claude.json` or global config:
+
+```json
+{
+  "customCommands": {
+    "oblique": "./scripts/oblique.sh"
+  }
+}
+```
+
+Or run directly: `./scripts/oblique.sh`
+
+---
+
+### OpenAI Codex
+
+Add to your project's AGENTS.md:
+
+```markdown
+# Custom Skills
+- oblique: ./scripts/oblique.sh
+```
+
+Or run directly: `./scripts/oblique.sh`
+
+---
+
+### Google Gemini
+
+Use the script directly in your prompts, or via the Gemini API as a custom tool.
+
+---
+
+## Requirements
+
+- `uv` — `pip install uv`
+- `oblique` package — auto-installed on first run
+
+The script checks for `uv` and fails gracefully with a helpful message if missing.
