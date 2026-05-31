@@ -8,13 +8,13 @@ Random creative prompts from Brian Eno & Peter Schmidt's Oblique Strategies deck
 ./scripts/oblique.sh
 ```
 
-Works standalone — 30 embedded strategies are included. If `uv` is available, it fetches fresh ones from PyPI.
+Requires: `uv` (install with `pip install uv`) and network access.
 
 ---
 
 ## Install in Agents
 
-Uses the **SKILL.md** format from the [Agent Skills](https://agentskills.io) standard.
+Uses **SKILL.md** from the [Agent Skills](https://agentskills.io) standard.
 
 ### Opencode
 
@@ -45,19 +45,8 @@ cp SKILL.md scripts/oblique.sh ~/.agents/skills/oblique-strategies/
 
 ---
 
-### Google Gemini
-
-Reference the script in your prompts.
-
----
-
-## How It Works
-
-The script tries `uv` + the `oblique` package first. If that fails (no `uv`, no network), it falls back to 30 embedded strategies — so it always works.
-
----
-
 ## Requirements
 
-- Optional: `uv` (for fresh strategies) — `pip install uv`
-- Optional: `oblique` package (auto-installed by uv)
+- `uv` — `pip install uv`
+- `oblique` package — auto-installed by `uv run --with`
+- Network access (for first run)
