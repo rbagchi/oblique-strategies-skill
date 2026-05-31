@@ -2,16 +2,6 @@
 
 Random creative prompts from Brian Eno & Peter Schmidt's Oblique Strategies decks.
 
-## Usage
-
-```bash
-./scripts/oblique.sh
-```
-
-Requires: `uv` (install with `pip install uv`) and network access.
-
----
-
 ## Install in Agents
 
 Uses **SKILL.md** from the [Agent Skills](https://agentskills.io) standard.
@@ -20,7 +10,7 @@ Uses **SKILL.md** from the [Agent Skills](https://agentskills.io) standard.
 
 ```bash
 mkdir -p ~/.config/opencode/skills/oblique-strategies
-cp SKILL.md scripts/oblique.sh ~/.config/opencode/skills/oblique-strategies/
+cp SKILL.md ~/.config/opencode/skills/oblique-strategies/
 ```
 
 Trigger: `/oblique`, "I'm stuck", "need a creative idea"
@@ -31,7 +21,7 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 
 ```bash
 mkdir -p ~/.claude/skills/oblique-strategies
-cp SKILL.md scripts/oblique.sh ~/.claude/skills/oblique-strategies/
+cp SKILL.md ~/.claude/skills/oblique-strategies/
 ```
 
 ---
@@ -40,7 +30,7 @@ cp SKILL.md scripts/oblique.sh ~/.claude/skills/oblique-strategies/
 
 ```bash
 mkdir -p ~/.agents/skills/oblique-strategies
-cp SKILL.md scripts/oblique.sh ~/.agents/skills/oblique-strategies/
+cp SKILL.md ~/.agents/skills/oblique-strategies/
 ```
 
 ---
