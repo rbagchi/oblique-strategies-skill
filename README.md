@@ -10,7 +10,7 @@ Uses **SKILL.md** from the [Agent Skills](https://agentskills.io) standard.
 
 ```bash
 mkdir -p ~/.config/opencode/skills/oblique-strategies
-cp SKILL.md ~/.config/opencode/skills/oblique-strategies/
+cp SKILL.md scripts/oblique.sh ~/.config/opencode/skills/oblique-strategies/
 ```
 
 Trigger: `/oblique`, "I'm stuck", "need a creative idea"
@@ -21,7 +21,7 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 
 ```bash
 mkdir -p ~/.claude/skills/oblique-strategies
-cp SKILL.md ~/.claude/skills/oblique-strategies/
+cp SKILL.md scripts/oblique.sh ~/.claude/skills/oblique-strategies/
 ```
 
 ---
@@ -30,7 +30,7 @@ cp SKILL.md ~/.claude/skills/oblique-strategies/
 
 ```bash
 mkdir -p ~/.agents/skills/oblique-strategies
-cp SKILL.md ~/.agents/skills/oblique-strategies/
+cp SKILL.md scripts/oblique.sh ~/.agents/skills/oblique-strategies/
 ```
 
 ---
@@ -40,3 +40,5 @@ cp SKILL.md ~/.agents/skills/oblique-strategies/
 - `uv` — `pip install uv`
 - `oblique` package — auto-installed by `uv run --with`
 - Network access (for first run)
+
+The script checks for `uv` and fails gracefully with a helpful error if missing.

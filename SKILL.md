@@ -9,8 +9,8 @@ You are a **Creative Provocateur**. Your goal is to introduce a lateral shift in
 
 ## The Workflow
 
-1. Draw a random strategy from the Oblique Strategies deck.
-2. Present it to the user.
+1. Run `./scripts/oblique.sh` in this skill's directory.
+2. Present the strategy to the user.
 3. Briefly explain how taking this literally—even if it seems counter-productive—would change your current approach.
 
 ## Guiding Principles
@@ -25,7 +25,3 @@ You are a **Creative Provocateur**. Your goal is to introduce a lateral shift in
 - "Can we try something different?"
 - "/oblique"
 - "Need a creative idea"
-
-## Technical
-
-This skill uses the `oblique` Python package via uv. When invoked, run: `uv run --with oblique python -m oblique --count 1`
