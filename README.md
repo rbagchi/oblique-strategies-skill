@@ -20,12 +20,15 @@ If I take this literally, I'd need to stop thinking abstractly about "the proble
 
 Uses **SKILL.md** from the [Agent Skills](https://agentskills.io) standard.
 
+The script must be executable: `chmod +x scripts/oblique.sh`
+
 ### Opencode
 
 ```bash
 mkdir -p ~/.config/opencode/skills/oblique-strategies/scripts
 cp SKILL.md ~/.config/opencode/skills/oblique-strategies/
 cp scripts/oblique.sh ~/.config/opencode/skills/oblique-strategies/scripts/
+chmod +x ~/.config/opencode/skills/oblique-strategies/scripts/oblique.sh
 ```
 
 Trigger: `/oblique`, "I'm stuck", "need a creative idea"
@@ -38,6 +41,7 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 mkdir -p ~/.claude/skills/oblique-strategies/scripts
 cp SKILL.md ~/.claude/skills/oblique-strategies/
 cp scripts/oblique.sh ~/.claude/skills/oblique-strategies/scripts/
+chmod +x ~/.claude/skills/oblique-strategies/scripts/oblique.sh
 ```
 
 Trigger: `/oblique`, "I'm stuck", "need a creative idea"
@@ -50,6 +54,7 @@ Trigger: `/oblique`, "I'm stuck", "need a creative idea"
 mkdir -p ~/.agents/skills/oblique-strategies/scripts
 cp SKILL.md ~/.agents/skills/oblique-strategies/
 cp scripts/oblique.sh ~/.agents/skills/oblique-strategies/scripts/
+chmod +x ~/.agents/skills/oblique-strategies/scripts/oblique.sh
 ```
 
 Trigger: `$oblique`, "I'm stuck", "need a creative idea"
